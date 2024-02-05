@@ -20,7 +20,7 @@ app.get('/api/herkut', (req, res) => {
         const savedPin = await fs.readFile('./pin.txt', 'utf-8')
         
         // Send the file content as the response
-        res.send(savedPin)
+        res.json(savedPin)
     } catch (error) {
         console.error('Error reading file:', error)
         res.status(500).send('Internal Server Error')
